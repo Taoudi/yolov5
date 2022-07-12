@@ -15,7 +15,7 @@
 # For more info on configuring sweeps visit - https://docs.wandb.ai/guides/sweeps/configuration
 
 program: utils/loggers/wandb/sweep.py
-method: random
+method: bayes
 metric:
   name: metrics/mAP_0.5
   goal: maximize
@@ -23,9 +23,9 @@ metric:
 parameters:
   # hyperparameters: set either min, max range or values list
   data:
-    value: "data/coco128.yaml"
+    value: "/storage/yousseft/ROI-Detection/yolov5/yolo/data.yaml"
   batch_size:
-    values: [64]
+    values: [32]
   epochs:
     values: [10]
 
